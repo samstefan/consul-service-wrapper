@@ -10,7 +10,8 @@ import {
 
 export default class ConsulService {
   constructor (consulSettings = {}) {
-    this.consul = new Consul(consulSettings)
+    this.consulSettings = consulSettings
+    this.consul = new Consul(this.consulSettings)
   }
 
   registerService (service = {}) {
@@ -42,7 +43,7 @@ export default class ConsulService {
 
   getService (service) {
     return new Promise((resolve, reject) => {
-      if (!service || service === '' || typeof service === 'undefined') {
+      if (!service || typeof service === 'undefined') {
         return reject(getServiceError('"service" is required'))
       }
 
@@ -51,24 +52,24 @@ export default class ConsulService {
           return reject(err)
         }
 
-        const service = result[Math.floor(Math.random() * result.length)]
-
-        if (service) {
-          return resolve(service)
+        if (!result || result.length === 0) {
+          return resolve(null)
         }
 
-        resolve(null)
+        const service = result[Math.floor(Math.random() * result.length)]
+
+        return resolve(service)
       })
     })
   }
 
   getServiceByTag (service, tag) {
     return new Promise((resolve, reject) => {
-      if (!service || service === '' || typeof service === 'undefined') {
+      if (!service || typeof service === 'undefined') {
         return reject(getServiceByTagError('"service" is required'))
       }
 
-      if (!tag || tag === '' || typeof tag === 'undefined') {
+      if (!tag || typeof tag === 'undefined') {
         return reject(getServiceByTagError('"tag" is required'))
       }
 
@@ -107,7 +108,7 @@ export default class ConsulService {
   }
 
   formatUri (service) {
-    if (!service || service === '' || typeof service === 'undefined') {
+    if (!service || typeof service === 'undefined') {
       throw formatUriError('"service" is required')
     }
 
