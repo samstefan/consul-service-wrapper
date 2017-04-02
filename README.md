@@ -1,2 +1,2 @@
 # consul-service-wrapper
-Easily create a service and register it with Consul in node.
+Easily create and connect a service with [Consul](https://www.consul.io/) in Node.js.
