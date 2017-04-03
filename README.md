@@ -1,8 +1,27 @@
 # Consul Service Wrapper
-[![CircleCI](https://circleci.com/gh/samstefan/consul-service-wrapper.svg?style=svg)](https://circleci.com/gh/samstefan/consul-service-wrapper)
 [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+[![CircleCI](https://circleci.com/gh/samstefan/consul-service-wrapper.svg?style=svg)](https://circleci.com/gh/samstefan/consul-service-wrapper)
 
 Easily create and connect a service with [Consul](https://www.consul.io/) in Node.js.
+
+## Prerequisite
+This project is auto compiled from ES2015 to ES5 by Babel, if you'd like to use the ES2015 code directly you can require it by doing the following:
+```
+import ConsulService from 'consul-service-wrapper/src';
+```
+
+## Getting started
+
+### Common JS
+- `npm install <add-when-deployed> --save`
+- `var ConsulService = require('consul-service-wrapper').default;`
+
+### ES2015 Import
+- `npm install <add-when-deployed> --save`
+- `import ConsulService from 'consul-service-wrapper';`
+
+## Configuration
+The `ConsulService` takes the same configertions as the [Console](https://www.npmjs.com/package/consul) package for connection to the Consule server, for more details please check the [Console package documentation](https://www.npmjs.com/package/consul#init).
 
 ## License
 License (MIT)
