@@ -57,11 +57,38 @@ The address of the service.
 | `address` | String | N        | `127.0.0.1` |
 
 #### `id`
-The id to register the service with.
+The id to register the service with. Defaults to using the service name.
 
 | Name | Type   | Required | Default |
 |------|--------|----------|---------|
 | `id` | String | N        | `name`  |
+
+### `getService(serviceName)`
+getService allows you to fetch a service by name if more than one is match then one will be returned at random.
+
+#### `serviceName`
+The service name you want to fetch.
+
+| Name          | Type   | Required | Default      |
+|---------------|--------|----------|--------------|
+| `serviceName` | String | Y        | `undefined`  |
+
+### `getServiceByTag(serviceName, tag)`
+Get a service by name and tag if more than one service is found one matching service will be retrned at random.
+
+#### `serviceName`
+The service name you want to fetch.
+
+| Name          | Type   | Required | Default      |
+|---------------|--------|----------|--------------|
+| `serviceName` | String | Y        | `undefined`  |
+
+#### `tag`
+The service tag you want to filter by.
+
+| Name  | Type   | Required | Default      |
+|-------|--------|----------|--------------|
+| `tag` | String | Y        | `undefined`  |
 
 ## License
 License (MIT)
