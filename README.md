@@ -63,6 +63,16 @@ The id to register the service with. Defaults to using the service name.
 |------|--------|----------|---------|
 | `id` | String | N        | `name`  |
 
+#### Usage
+
+```
+const service = { name: 'test-service', port: 8080 }
+const consulService = new ConsulService()
+consulService
+  .registerService(service)
+  .catch(err => console.log(err))
+```
+
 ### `getService(serviceName)`
 getService allows you to fetch a service by name if more than one is match then one will be returned at random.
 
@@ -72,6 +82,16 @@ The service name you want to fetch.
 | Name          | Type   | Required | Default      |
 |---------------|--------|----------|--------------|
 | `serviceName` | String | Y        | `undefined`  |
+
+#### Usage
+
+```
+const consulService = new ConsulService()
+consulService
+  .getService('test-service')
+  .then(service => console.log(service)) 
+  .catch(err => console.error(err))
+```
 
 ### `getServiceByTag(serviceName, tag)`
 Get a service by name and tag if more than one service is found one matching service will be retrned at random.
@@ -89,6 +109,36 @@ The service tag you want to filter by.
 | Name  | Type   | Required | Default      |
 |-------|--------|----------|--------------|
 | `tag` | String | Y        | `undefined`  |
+
+### Usage
+
+```
+const consulService = new ConsulService()
+consulService
+  .getServiceByTag('test-service, 'stable')
+  .then(service => console.log(service)) 
+  .catch(err => console.log(err))
+```
+
+### `formatUri(service)`
+Takes in a service object and formats a URI from it E.G. `127.0.0.1:8080`
+
+#### `service`
+The service object returned from `getServiceByTag` or `getService`.
+
+| Name      | Type   | Required | Default      |
+|-----------|--------|----------|--------------|
+| `service` | Object | Y        | `undefined`  |
+
+## Contributing and Developing
+
+### Testing
+- Running unit tests: `npm test`
+
+### Scripts
+- `test`: Runs the unit tests
+- `build`: Compiles the code to ES5 in the dist folder
+- `dev`: Compiles the code to ES5 and watches for changes
 
 ## License
 License (MIT)
