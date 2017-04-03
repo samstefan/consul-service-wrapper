@@ -130,6 +130,17 @@ The service object returned from `getServiceByTag` or `getService`.
 |-----------|--------|----------|--------------|
 | `service` | Object | Y        | `undefined`  |
 
+#### Usage
+
+```
+const consulService = new ConsulService()
+consulService
+  .getService('test-service')
+  .then(service => consulService.formatUri(service))
+  .then(uri => console.log(uri))
+  .catch(err => console.error(err))
+```
+
 ## Contributing and Developing
 
 ### Testing
