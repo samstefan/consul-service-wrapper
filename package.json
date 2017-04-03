@@ -4,10 +4,11 @@
   "description": "Easily create a service and register it with Consul in node.",
   "main": "dist/index.js",
   "scripts": {
-    "test": "nyc --reporter=lcov mocha --compilers js:babel-register test/specs",
+    "test": "mocha --compilers js:babel-register test/specs",
+    "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
+    "cov": "open ./coverage/lcov-report/index.html",
     "build": "babel src -d dist",
     "dev": "babel src -d dist -w",
-    "cov": "open ./coverage/lcov-report/index.html",
     "prepublish": "npm run build"
   },
   "repository": {
@@ -48,6 +49,7 @@
     "babel-preset-stage-2": "^6.22.0",
     "babel-register": "^6.24.0",
     "chai": "^3.5.0",
+    "coveralls": "^2.13.0",
     "eslint": "^3.19.0",
     "eslint-config-standard": "^7.1.0",
     "eslint-plugin-promise": "^3.5.0",
