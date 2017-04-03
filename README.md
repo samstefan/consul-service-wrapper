@@ -51,7 +51,7 @@ The tags to register the service with.
 | `tags`   | Array  | N        | `[]`        |
 
 #### `address`
-The address of the service. 
+The address of the service.
 
 | Name      | Type   | Required | Default     |
 |-----------|--------|----------|-------------|
@@ -90,7 +90,7 @@ The service name you want to fetch.
 const consulService = new ConsulService()
 consulService
   .getService('test-service')
-  .then(service => console.log(service)) 
+  .then(service => console.log(service))
   .catch(err => console.error(err))
 ```
 
@@ -117,7 +117,7 @@ The service tag you want to filter by.
 const consulService = new ConsulService()
 consulService
   .getServiceByTag('test-service, 'stable')
-  .then(service => console.log(service)) 
+  .then(service => console.log(service))
   .catch(err => console.log(err))
 ```
 
@@ -150,6 +150,9 @@ consulService
 ### Scripts
 - `test`: Runs the unit tests
 - `build`: Compiles the code to ES5 in the dist folder
+- `coverage`: Produce coverage report
+- `coveralls`: Run coverage report and pipe it to Coveralls
+- `cov`: Open the coverage report
 - `dev`: Compiles the code to ES5 and watches for changes
 
 ## License
