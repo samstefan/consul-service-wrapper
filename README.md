@@ -13,11 +13,11 @@ import ConsulService from 'consul-service-wrapper/src';
 ## Getting started
 
 ### Common JS
-- `npm install <add-when-deployed> --save`
+- `npm install consul-service-wrapper --save`
 - `var ConsulService = require('consul-service-wrapper').default;`
 
 ### ES2015 Import
-- `npm install <add-when-deployed> --save`
+- `npm install consul-service-wrapper --save`
 - `import ConsulService from 'consul-service-wrapper';`
 
 ## Configuration
