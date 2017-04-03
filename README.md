@@ -1,6 +1,7 @@
 # Consul Service Wrapper
 [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 [![Coverage Status](https://coveralls.io/repos/github/samstefan/consul-service-wrapper/badge.svg?branch=master)](https://coveralls.io/github/samstefan/consul-service-wrapper?branch=master)
+[![npm version](https://badge.fury.io/js/consul-service-wrapper.svg)](https://badge.fury.io/js/consul-service-wrapper)
 [![CircleCI](https://circleci.com/gh/samstefan/consul-service-wrapper.svg?style=svg)](https://circleci.com/gh/samstefan/consul-service-wrapper)
 
 Easily create and connect a service with [Consul](https://www.consul.io/) in Node.js.
