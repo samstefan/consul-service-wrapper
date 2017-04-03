@@ -110,7 +110,8 @@ describe('src/index.js', () => {
       it('Should return a found service on "getService" when service ID exists', () => {
         const consulService = new ConsulService()
         const services = [
-          { Node: 'MBP',
+          {
+            Node: 'MBP',
             Address: '127.0.0.1',
             TaggedAddresses: { lan: '127.0.0.1', wan: '127.0.0.1' },
             ServiceID: 'test-service',
@@ -177,7 +178,8 @@ describe('src/index.js', () => {
       it('Should return a found service on "getServiceByTag" when service ID and tag exists', () => {
         const consulService = new ConsulService()
         const services = [
-          { Node: 'MBP',
+          {
+            Node: 'MBP',
             Address: '127.0.0.1',
             TaggedAddresses: { lan: '127.0.0.1', wan: '127.0.0.1' },
             ServiceID: 'test-service',
@@ -253,7 +255,8 @@ describe('src/index.js', () => {
       it('Should return null if no matching tag is returned', () => {
         const consulService = new ConsulService()
         const services = [
-          { Node: 'MBP',
+          {
+            Node: 'MBP',
             Address: '127.0.0.1',
             TaggedAddresses: { lan: '127.0.0.1', wan: '127.0.0.1' },
             ServiceID: 'test-service',
