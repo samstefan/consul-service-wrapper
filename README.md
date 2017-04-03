@@ -23,6 +23,46 @@ import ConsulService from 'consul-service-wrapper/src';
 ## Configuration
 The `ConsulService` takes the same configertions as the [Console](https://www.npmjs.com/package/consul) package for connection to the Consule server, for more details please check the [Console package documentation](https://www.npmjs.com/package/consul#init).
 
+## Methods
+
+### `registerService(service)`
+registerService takes a service config as an `Object` and registers it with Consul. The following lists each available option and what it does:
+
+#### `name`
+The name of the service.
+
+| Name     | Type   | Required | Default     |
+|----------|--------|----------|-------------|
+| `name`   | String | Y        | `undefined` |
+
+#### `port`
+The port the the service runs on.
+
+| Name     | Type   | Required | Default     |
+|----------|--------|----------|-------------|
+| `port`   | Number | Y        | `undefined` |
+
+#### `tags`
+The tags to register the service with.
+
+| Name     | Type   | Required | Default     |
+|----------|--------|----------|-------------|
+| `tags`   | Array  | N        | `[]`        |
+
+#### `address`
+The address of the service. 
+
+| Name      | Type   | Required | Default     |
+|-----------|--------|----------|-------------|
+| `address` | String | N        | `127.0.0.1` |
+
+### `id`
+The id to register the service with.
+
+| Name | Type   | Required | Default |
+|------|--------|----------|---------|
+| `id` | String | N        | `name`  |
+
 ## License
 License (MIT)
 
