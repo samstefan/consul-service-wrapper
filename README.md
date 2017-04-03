@@ -1,4 +1,7 @@
 # Consul Service Wrapper
+[![CircleCI](https://circleci.com/gh/samstefan/consul-service-wrapper.svg?style=svg)](https://circleci.com/gh/samstefan/consul-service-wrapper)
+[![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+
 Easily create and connect a service with [Consul](https://www.consul.io/) in Node.js.
 
 ## License
