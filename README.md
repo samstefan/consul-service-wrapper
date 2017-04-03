@@ -56,7 +56,7 @@ The address of the service.
 |-----------|--------|----------|-------------|
 | `address` | String | N        | `127.0.0.1` |
 
-### `id`
+#### `id`
 The id to register the service with.
 
 | Name | Type   | Required | Default |
