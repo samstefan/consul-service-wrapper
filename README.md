@@ -8,7 +8,7 @@ Easily create and connect a service with [Consul](https://www.consul.io/) in Nod
 
 ## Prerequisite
 ```
-Node v6.x
+Node ^6.9.0
 ```
 
 ## Getting started
