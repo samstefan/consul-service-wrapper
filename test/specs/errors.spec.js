@@ -1,12 +1,14 @@
-import chai from 'chai'
-const { expect } = chai
+const expect = require('chai').expect
 
-import * as errors from './../../src/errors'
+const invalidServiceConfig = require('../../lib/errors').invalidServiceConfig
+const getServiceError = require('../../lib/errors').getServiceError
+const getServiceByTagError = require('../../lib/errors').getServiceByTagError
+const formatUriError = require('../../lib/errors').formatUriError
 
 describe('src/errors.js', () => {
   describe('invalidServiceConfig', () => {
     it('Should return an \'Error\' with the correct name and message', () => {
-      const error = errors.invalidServiceConfig('test message')
+      const error = invalidServiceConfig('test message')
       expect(error instanceof Error).to.equal(true)
       expect(error.message).to.equal('test message')
       expect(error.name).to.equal('invalidServiceConfig')
@@ -15,7 +17,7 @@ describe('src/errors.js', () => {
 
   describe('getServiceError', () => {
     it('Should return an \'Error\' with the correct name and message', () => {
-      const error = errors.getServiceError('test message')
+      const error = getServiceError('test message')
       expect(error instanceof Error).to.equal(true)
       expect(error.message).to.equal('test message')
       expect(error.name).to.equal('getServiceError')
@@ -24,7 +26,7 @@ describe('src/errors.js', () => {
 
   describe('getServiceByTagError', () => {
     it('Should return an \'Error\' with the correct name and message', () => {
-      const error = errors.getServiceByTagError('test message')
+      const error = getServiceByTagError('test message')
       expect(error instanceof Error).to.equal(true)
       expect(error.message).to.equal('test message')
       expect(error.name).to.equal('getServiceByTagError')
@@ -33,7 +35,7 @@ describe('src/errors.js', () => {
 
   describe('formatUriError', () => {
     it('Should return an \'Error\' with the correct name and message', () => {
-      const error = errors.formatUriError('test message')
+      const error = formatUriError('test message')
       expect(error instanceof Error).to.equal(true)
       expect(error.message).to.equal('test message')
       expect(error.name).to.equal('formatUriError')
