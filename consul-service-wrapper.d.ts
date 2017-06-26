@@ -30,17 +30,13 @@ interface ConsulService {
      *  id: 'redis'
      * }
      */
-    registerService (
-        service: SSConsul.Service
-    ): Promise<void>,
+    registerService (service: SSConsul.Service): Promise<void>,
 
     /**
      * Fetches a service by name, if more than one is available
      * a random one is returned
      */
-    getService (
-        serviceName: string
-    ): Promise<object>,
+    getService (serviceName: string): Promise<object>,
 
     /**
      * Fetches a service by tag, if more than one is available
@@ -48,22 +44,15 @@ interface ConsulService {
      * Example:
      * 
      */
-    getServiceByTag (
-        serviceName: string,
-        tag: string
-    ): Promise<object>,
+    getServiceByTag (serviceName: string, tag: string): Promise<object>,
 
     /**
      * Returns a uri for a service
      */
-    formatUri (
-        service: object
-    ): string,
+    formatUri (service: object): string,
 }
 
-declare function SSConsul (
-    options?: Consul.ConsulOptions
-) : ConsulService
+declare function SSConsul (options?: Consul.ConsulOptions) : ConsulService
 
 declare namespace SSConsul {
     export interface Service {
@@ -82,9 +71,7 @@ declare namespace SSConsul {
     /**
      * Validates the configuration for a service
      */
-    export function validateServiceConfig(
-        configuration: Service
-    ) : Service
+    export function validateServiceConfig(configuration: Service) : Service
 }
 
 export = SSConsul
