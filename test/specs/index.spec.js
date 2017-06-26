@@ -1,7 +1,7 @@
-import chai from 'chai'
-const { expect } = chai
+const expect = require('chai').expect
 
-import ConsulService, { vaildateServiceConfig } from './../../src/index'
+const ConsulService = require('../../lib')
+const vaildateServiceConfig = require('../../lib').vaildateServiceConfig
 
 describe('src/index.js', () => {
   describe('ConsulService', () => {
