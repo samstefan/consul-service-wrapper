@@ -1,6 +1,6 @@
 {
   "name": "consul-service-wrapper",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Easily create a service and register it with Consul in node.",
   "main": "index.js",
   "scripts": {
@@ -23,22 +23,10 @@
   },
   "nyc": {
     "watermarks": {
-      "lines": [
-        80,
-        95
-      ],
-      "functions": [
-        80,
-        95
-      ],
-      "branches": [
-        80,
-        95
-      ],
-      "statements": [
-        80,
-        95
-      ]
+      "lines": [80, 95],
+      "functions": [80, 95],
+      "branches": [80, 95],
+      "statements": [80, 95]
     }
   },
   "homepage": "https://github.com/samstefan/consul-service-wrapper#readme",
