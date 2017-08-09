@@ -23,27 +23,14 @@
   },
   "nyc": {
     "watermarks": {
-      "lines": [
-        80,
-        95
-      ],
-      "functions": [
-        80,
-        95
-      ],
-      "branches": [
-        80,
-        95
-      ],
-      "statements": [
-        80,
-        95
-      ]
+      "lines": [80, 95],
+      "functions": [80, 95],
+      "branches": [80, 95],
+      "statements": [80, 95]
     }
   },
   "homepage": "https://github.com/samstefan/consul-service-wrapper#readme",
   "devDependencies": {
-    "@types/consul": "^0.23.31",
     "chai": "^3.5.0",
     "coveralls": "^2.13.0",
     "eslint": "^3.19.0",
@@ -56,6 +43,7 @@
     "sinon": "^2.1.0"
   },
   "dependencies": {
+    "@types/consul": "^0.23.31",
     "consul": "^0.28.0"
   },
   "typings": "consul-service-wrapper.d.ts"
