@@ -1,6 +1,6 @@
 {
   "name": "consul-service-wrapper",
-  "version": "1.0.0",
+  "version": "2.2.0",
   "description": "Easily create a service and register it with Consul in node.",
   "main": "index.js",
   "scripts": {
