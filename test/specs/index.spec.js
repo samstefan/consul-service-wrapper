@@ -322,6 +322,52 @@ describe('src/index.js', () => {
             expect(service).to.deep.equal(services[0])
           })
       })
+
+      describe('when passing in an array of tags', () => {
+        const consulService = new ConsulService()
+        const services = [
+          {
+            Node: 'MBP',
+            Address: '127.0.0.1',
+            TaggedAddresses: { lan: '127.0.0.1', wan: '127.0.0.1' },
+            ServiceID: 'test-service',
+            ServiceName: 'test-service',
+            ServiceTags: [ 'redis', 'testing' ],
+            ServiceAddress: '',
+            ServicePort: 8080,
+            ServiceEnableTagOverride: false,
+            CreateIndex: 1440,
+            ModifyIndex: 1452
+          }
+        ]
+        consulService.consul.catalog.service.nodes = (service, callback) => {
+          callback(null, services)
+        }
+
+        it('should return services that are associated with a set of tags', () => {
+          return consulService
+            .getServiceByTag('test-service', ['redis', 'testing'])
+            .then(service => {
+              expect(service).to.deep.equal(services[0])
+            })
+        })
+
+        it('should return null if not all tags match a service\'s set of tags', () => {
+          return consulService
+            .getServiceByTag('test-service', ['testing'])
+            .then(service => {
+              expect(service).to.deep.equal(null)
+            })
+        })
+
+        it('should return null if tags is an empty array', () => {
+          return consulService
+            .getServiceByTag('test-service', [])
+            .then(service => {
+              expect(service).to.deep.equal(null)
+            })
+        })
+      })
     })
 
     describe('formatUri', () => {
