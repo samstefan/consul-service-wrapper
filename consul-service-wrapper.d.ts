@@ -30,7 +30,7 @@ declare namespace SSConsul {
     /**
      * Register a service with consul
      * Example:
-     * 
+     *
      * {
      *  name: 'redis,
      *  port: 6379,
@@ -51,10 +51,21 @@ declare namespace SSConsul {
      * Fetches a service by tag, if more than one is available
      * a random one is returned
      * Example:
-     * 
+     *
      * consul.getServiceBytag('redis', 'stable')
      */
     getServiceByTag(serviceName: string, tag: string): Promise<object>
+
+    /**
+     * Fetches a service(s) associated with a set of tags. If the tags
+     * do not match all of the tags a service is associated with, then it
+     * will not be returned.
+     * Example:
+     *
+     * // returns any nodes that match the tags: stable && testing.
+     * consul.getServiceByTag('redis', ['stable', 'testing'])
+     */
+    getServiceByTag(serviceName: string, tags: Array<string>) : Promise<object>
 
     /**
      * Returns a uri for a service
