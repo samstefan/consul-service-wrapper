@@ -373,7 +373,7 @@ describe('src/index.js', () => {
     describe('formatUri', () => {
       it('Should return a formatted URI when a service is passed in', () => {
         const consul = new ConsulService()
-        const uri = consul.formatUri({ Address: '127.0.0.1', ServicePort: 80 })
+        const uri = consul.formatUri({ ServiceAddress: '127.0.0.1', ServicePort: 80 })
         expect(uri).to.equal('127.0.0.1:80')
       })
 
