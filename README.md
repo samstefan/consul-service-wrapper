@@ -16,7 +16,7 @@ Node ^6.9.0
 - `var ConsulService = require('consul-service-wrapper');`
 
 ## Configuration
-The `ConsulService` takes the same configertions as the [Console](https://www.npmjs.com/package/consul) package for connection to the Consule server, for more details please check the [Console package documentation](https://www.npmjs.com/package/consul#init).
+The `ConsulService` takes the same configuration as the [Consul](https://www.npmjs.com/package/consul) package for connection to the Consul server, for more details please check the [Consul package documentation](https://www.npmjs.com/package/consul#init).
 
 ## Methods
 
